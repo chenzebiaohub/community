@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>码匠社区</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/css/community.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/bootstrap.min.js" type="application/javascript"></script>
+    <style>
+        body {
+            font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 13px;
+            color: #676a6c;
+            overflow-x: hidden;
+        }
+
+        .middle-box {
+            max-width: 400px;
+            z-index: 100;
+            margin: 0 auto;
+            padding-top: 40px;
+        }
+
+        .middle-box h1 {
+            font-size: 170px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 100;
+        }
+
+        .font-bold {
+            font-weight: 600;
+        }
+
+        h3, h4, h5 {
+            margin-top: 5px;
+        }
+
+        h3 {
+            font-size: 18px;
+        }
+
+        .m-t {
+            margin-top: 15px;
+        }
+
+        .btn-primary {
+            background-color: #1ab394;
+            border-color: #1ab394;
+            color: #FFFFFF;
+        }
+
+        .btn {
+            border-radius: 3px;
+            padding: 6px 25px;
+        }
+
+        .btn-primary:hover {
+            background-color: #18a689;
+            border-color: #18a689;
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+<div th:insert="navigation :: nav"></div>
+
+<div class="jumbotron">
+    <!--            <h1>出错了！！！</h1>-->
+    <!--            <span th:text="${message}">稍后请重试！</span>-->
+    <div style="position:relative;" class="middle-box text-center animated fadeInDown">
+        <img style="margin-left:-139px;" src="/images/bg.jpg" alt=""/>
+        <h3 style="position:absolute;right:-15px;top:180px;color:#fe0000;" class="font-bold">对不起，发生错误了！</h3>
+        <div style="position:absolute;right:12px;top:230px;color:#fe0000;" class="error-desc">
+                <b>错误原因：</b><span th:text="${message}">稍后请重试！</span><br>
+        </div>
+        <!--            <p><a class="btn btn-primary btn-lg" href="/" role="button">回到首页</a></p>-->
+        <a style="text-decoration: none;" href="/" class="btn btn-primary m-t">返回首页</a>
+    </div>
+
+</div>
+</div>
+</div>
+</body>
+</html>

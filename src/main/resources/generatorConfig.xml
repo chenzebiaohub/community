@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!--  数据库连接配置  -->
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"></plugin>
+        <jdbcConnection driverClass="org.h2.Driver"
+                        connectionURL="jdbc:h2:~/commit"
+                        userId="sa"
+                        password="chen">
+        </jdbcConnection>
+        <!--  非必需，类型处理器，在数据库类型和java类型之间的转换控制 -->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <!--
+        配置生成的实体包
+                    targetPackage：生成的实体包位置，默认存放在src目录下
+                    targetProject：目标工程名
+        -->
+        <javaModelGenerator targetPackage="com.czb.community.model" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!--  实体包对应映射文件位置及名称，默认存放在src目录下  -->
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <!--  targetProject：mapper接口生成的的位置  -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.czb.community.mapper" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+        <!--
+         配置表
+                    schema：不用填写
+                    tableName: 表名
+                    enableCountByExample、enableSelectByExample、enableDeleteByExample、enableUpdateByExample、selectByExampleQueryId：
+                    去除自动生成的例子
+        -->
+<!--        <table tableName="use" domainObjectName="User"/>-->
+<!--        <table tableName="question" domainObjectName="Question"/>-->
+<!--        <table tableName="comment" domainObjectName="Comment"/>-->
+        <table tableName="notification" domainObjectName="Notification"/>
+    </context>
+</generatorConfiguration>
